@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-color-primary-text: hsl(159, 98%, 48%);
+  --color-color-primary-background: hsl(193, 59%, 8%);
+  --color-bg-lighter:  hsl(193, 59%, 15%);
+  --color-text-lighter: hsl(159, 98%, 78%);
+
+  --font-robboto: roboto, sans-serif;
+
+}
