@@ -43,22 +43,24 @@ function AddNote() {
         title:
         <input
           value={title}
+          required
           type="text"
           onChange={(e) => titleHandler(e)}
-          className="border-0 outline-0 px-4 capitalize bg-bg-lighter py-2 rounded-lg"
+          className="border-0 outline-0 px-4 capitalize bg-bg-lighter dark:bg-gray-200 py-2 rounded-lg"
         />
       </label>
       <label className="flex flex-col capitalize">
         title:
         <textarea
+          required
           value={body}
           onChange={(e) => bodyHandler(e)}
-          className="border-0 outline-0 px-4 capitalize bg-bg-lighter py-2 rounded-lg max-w-full h-60 resize-none scrollbar-thumb-text-lighter"
+          className="border-0 outline-0 px-4 capitalize bg-bg-lighter dark:bg-gray-200 py-2 rounded-lg max-w-full h-60 resize-none scrollbar-thumb-text-lighter"
         ></textarea>
       </label>
       <button
         type="submit"
-        className="bg-[hsl(226,100%,20%)] py-2 cursor-pointer self-cente"
+        className="bg-[hsl(226,100%,20%)] text-gray-200 py-2 cursor-pointer self-cente"
       >
         Add
       </button>

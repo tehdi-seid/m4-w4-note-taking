@@ -4,7 +4,7 @@ export type Theme = "dark" | "light";
 export type ThemeContext = [theme: Theme, setTheme: (theme: Theme) => void];
 export const themeContex = createContext<ThemeContext | null>(null);
 function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<Theme>("theme", "dark");
+  const [theme, setTheme] = useLocalStorage<Theme>("theme", "light");
 
   function toogle() {
     setTheme((prev: Theme) => (prev === "dark" ? "light" : "dark"));

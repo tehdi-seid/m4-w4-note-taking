@@ -24,19 +24,19 @@ function NoteCard({ note }: { note: Note }) {
       <div className="flex justify-between items-center border-b pb-2">
         <button
           onClick={handleEdit}
-          className="cursor-pointer hover:text-text-lighter transition-colors duration-100 ease-in text-2xl"
+          className="cursor-pointer transition-colors duration-100 ease-in text-2xl"
         >
           <FaEdit />
         </button>
         <div className="flex gap-4">
           <button
             onClick={() => dispatch({ type: "archiveToggled", id: note.id })}
-            className={`cursor-pointer text-xl ${note.archived ? " text-amber-800" : "text-gray-300"}`}
+            className={`cursor-pointer text-xl ${note.archived ? " text-amber-800" : "text-gray-700"}`}
           >
             <IoArchive />
           </button>
           <button
-            className={`cursor-pointer text-xl ${note.pinned ? " text-amber-800" : "text-gray-300 "}`}
+            className={`cursor-pointer text-xl ${note.pinned ? " text-amber-800" : "text-gray-700"}`}
             type="button"
             onClick={() => dispatch({ type: "pinToggled", id: note.id })}
             aria-pressed={note.pinned}
