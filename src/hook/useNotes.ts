@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { noteContex, type NoteContextType } from "./NoteContext";
+// import { useContext } from "react";
 
-export function useNotes() {
-  const context = useContext(noteContex);
-  if (context === null) {
-    throw new Error("usenotes must be used within Notes provider");
-  }
-  return context;
-}
+// export function useNotes() {
+//   const context = useContext(noteContex);
+//   if (context === null) {
+//     throw new Error("usenotes must be used within Notes provider");
+//   }
+//   return context;
+// }

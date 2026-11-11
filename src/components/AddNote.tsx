@@ -1,11 +1,12 @@
 import React, { useState, type ChangeEvent, type FormEvent } from "react";
 import { TiEdit } from "react-icons/ti";
-import { useNotes } from "../hook/useNotes";
+import { useNotesDispatch } from "../hook/NoteProvider";
+import type { Note } from "../hook/types";
 
 function AddNote() {
+  const dispatch = useNotesDispatch();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [notes, addNote] = useNotes();
 
   function titleHandler(e: ChangeEvent<HTMLInputElement>) {
     setTitle(e.currentTarget.value);
@@ -18,9 +19,17 @@ function AddNote() {
   }
 
   function submitHandler(e: FormEvent) {
+    const new_note: Note = {
+      id: crypto.randomUUID(),
+      title,
+      body,
+      pinned: false,
+      archived: false,
+      createdAt: new Date().toLocaleDateString(),
+      updatedAt: new Date().toLocaleDateString(),
+    };
     e.preventDefault();
-    addNote({ title, body });
-    console.log(notes);
+    dispatch({ type: "added", note: new_note });
   }
 
   return (
