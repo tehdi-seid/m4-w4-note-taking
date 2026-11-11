@@ -22,14 +22,16 @@ function NoteCard({ note }: { note: Note }) {
   return (
     <div className="flex flex-col border border-teal-500 p-5 rounded-3xl gap-6 relative overflow-hidden">
       <div className="flex justify-between items-center border-b pb-2">
-        <div className="flex gap-2 items-center">
-          <MdOutlineDateRange />
-          <div>{note.createdAt}</div>
-        </div>
+        <button
+          onClick={handleEdit}
+          className="cursor-pointer hover:text-text-lighter transition-colors duration-100 ease-in text-2xl"
+        >
+          <FaEdit />
+        </button>
         <div className="flex gap-4">
           <button
             onClick={() => dispatch({ type: "archiveToggled", id: note.id })}
-            className={`cursor-pointer text-xl ${note.archived ? " text-amber-800" : "text-gray-300 "}`}
+            className={`cursor-pointer text-xl ${note.archived ? " text-amber-800" : "text-gray-300"}`}
           >
             <IoArchive />
           </button>
@@ -50,12 +52,10 @@ function NoteCard({ note }: { note: Note }) {
       <div className="w-15 h-15 bg-bg-lighter absolute top-0 left-0 rotate-45 -translate-y-1/2 -translate-x-1/2"></div>
 
       <div className="flex justify-between">
-        <button
-          onClick={handleEdit}
-          className="cursor-pointer hover:text-text-lighter transition-colors duration-100 ease-in"
-        >
-          <FaEdit />
-        </button>
+        <div className="flex gap-2 items-center">
+          <MdOutlineDateRange />
+          <div>{note.createdAt}</div>
+        </div>
         <button
           onClick={() => dispatch({ type: "removed", id: note.id })}
           className="cursor-pointer hover:text-[red] transition-colors duration-100 ease-in text-red-800"
