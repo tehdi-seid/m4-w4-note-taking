@@ -14,7 +14,7 @@ function NoteCard({ note }: { note: Note }) {
     <div className="flex flex-col border border-teal-500 p-5 rounded-3xl gap-6 relative overflow-hidden shadow-teal-700 shadow-md">
       <div className="flex justify-between items-center border-b pb-2">
         <button
-          onClick={handleEdit}
+          onClick={() => handleEdit}
           className="cursor-pointer transition-colors duration-100 ease-in text-2xl"
         >
           <FaEdit />
