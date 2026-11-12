@@ -1,5 +1,4 @@
-import React, { useState, type ChangeEvent, type FormEvent } from "react";
-import { TiEdit } from "react-icons/ti";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useNotesDispatch } from "../hook/NoteProvider";
 import type { Note } from "../hook/types";
 
@@ -19,6 +18,8 @@ function AddNote() {
   }
 
   function submitHandler(e: FormEvent) {
+    e.preventDefault();
+    console.count("Form submitted");
     const new_note: Note = {
       id: crypto.randomUUID(),
       title,
@@ -28,14 +29,14 @@ function AddNote() {
       createdAt: new Date().toLocaleDateString(),
       updatedAt: new Date().toLocaleDateString(),
     };
-    e.preventDefault();
+
     dispatch({ type: "added", note: new_note });
   }
 
   return (
     <form
       className="border p-5 rounded-2xl flex flex-col gap-5 h-max md:fixed md:w-80 top-25"
-      onSubmit={(e) => submitHandler(e)}
+      onSubmit={submitHandler}
     >
       <h1 className="text-3xl capitalize text-center">add notes here</h1>
 

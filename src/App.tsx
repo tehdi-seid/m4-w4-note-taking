@@ -32,8 +32,6 @@ function App() {
             ))}
           {view === "pinned" &&
             pinned_notes.map((note) => <NoteCard key={note.id} note={note} />)}
-          {view === "all" &&
-            notes.map((note) => <NoteCard key={note.id} note={note} />)}
         </div>
       </div>
     </div>

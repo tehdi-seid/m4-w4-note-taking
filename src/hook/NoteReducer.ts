@@ -12,6 +12,9 @@ export function notesReducer(notes: Note[], action: NotesAction): Note[] {
 
   switch (action.type) {
     case "added":
+      console.log("Reducer received:", action.note.id);
+      console.log("Previous notes:", notes.length);
+
       return [action.note, ...notes];
 
     case "updated":

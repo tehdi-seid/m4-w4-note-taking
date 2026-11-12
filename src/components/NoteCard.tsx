@@ -9,18 +9,9 @@ import { useNotesDispatch } from "../hook/NoteProvider";
 
 function NoteCard({ note }: { note: Note }) {
   const dispatch = useNotesDispatch();
-  function handleEdit() {
-    dispatch({
-      type: "updated",
-      id: note.id,
-      patch: {
-        title: "My updated title",
-        body: "My updated body",
-      },
-    });
-  }
+  function handleEdit() {}
   return (
-    <div className="flex flex-col border border-teal-500 p-5 rounded-3xl gap-6 relative overflow-hidden">
+    <div className="flex flex-col border border-teal-500 p-5 rounded-3xl gap-6 relative overflow-hidden shadow-teal-700 shadow-md">
       <div className="flex justify-between items-center border-b pb-2">
         <button
           onClick={handleEdit}
