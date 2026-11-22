@@ -1,14 +1,9 @@
 <!doctype html>
-<<<<<<< HEAD
 <html lang="en">
-=======
-<html lang="en" class="dark">
->>>>>>> 79543b21c5bafea05eea1fd6eebc5e1120e4d367
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
     <meta
       name="description"
       content="Notes kept in this browser, with pinned and archived views and a dark theme."
@@ -17,17 +12,11 @@
     <script>
       const storedTheme = localStorage.getItem("theme:v1");
       const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
-      if (storedTheme === '"dark"' || (storedTheme === null && prefersDark)) document.documentElement.classList.add("dark");
+      if (storedTheme === '"dark"' || (storedTheme === null && prefersDark))
+        document.documentElement.classList.add("dark");
     </script>
   </head>
   <body>
-=======
-    <title>note-taker</title>
-  </head>
-  <body
-    class="dark:bg-amber-50 px-[5%] dark:text-color-primary-background bg-color-primary-background text-color-primary-text font-robboto"
-  >
->>>>>>> 79543b21c5bafea05eea1fd6eebc5e1120e4d367
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

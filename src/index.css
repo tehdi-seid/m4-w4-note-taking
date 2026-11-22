@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-=======
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
->>>>>>> 79543b21c5bafea05eea1fd6eebc5e1120e4d367
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-<<<<<<< HEAD
 html {
   color-scheme: light;
 }
@@ -19,14 +14,3 @@ body {
   margin: 0;
   min-height: 100dvh;
 }
-=======
-@theme {
-  --color-color-primary-text: hsl(159, 98%, 48%);
-  --color-color-primary-background: hsl(193, 59%, 8%);
-  --color-bg-lighter:  hsl(193, 59%, 15%);
-  --color-text-lighter: hsl(159, 98%, 78%);
-
-  --font-robboto: roboto, sans-serif;
-
-}
->>>>>>> 79543b21c5bafea05eea1fd6eebc5e1120e4d367
