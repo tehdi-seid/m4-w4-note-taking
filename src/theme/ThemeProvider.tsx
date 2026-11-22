@@ -1,19 +1,27 @@
-// src/theme/ThemeProvider.tsx
 import { useEffect, useMemo } from "react";
 import type { ReactNode } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ThemeContext, type Theme } from "./ThemeContext";
 
 function systemTheme(): Theme {
+  if (typeof window === "undefined") return "light";
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 }
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<Theme>("theme:v1", systemTheme);
+function reviveTheme(value: unknown): Theme | undefined {
+  return value === "light" || value === "dark" ? value : undefined;
+}
 
-  // Synchronise the <html> class with state — Tailwind's dark variant keys off it.
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useLocalStorage<Theme>(
+    "theme",
+    systemTheme,
+    1,
+    reviveTheme,
+  );
+
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
@@ -21,7 +29,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const value = useMemo(
     () => ({
       theme,
-      toggle: () => setTheme((t) => (t === "dark" ? "light" : "dark")),
+      toggle: () => setTheme((current) => (current === "dark" ? "light" : "dark")),
     }),
     [theme, setTheme],
   );
