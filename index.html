@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/m4-w4-note-taking/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Notes kept in this browser, with pinned and archived views and a dark theme."
+    />
+    <title>Notes</title>
+    <script>
+      const storedTheme = localStorage.getItem("theme:v1");
+      const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+      if (storedTheme === '"dark"' || (storedTheme === null && prefersDark))
+        document.documentElement.classList.add("dark");
+    </script>
+    <script type="module" crossorigin src="/m4-w4-note-taking/assets/index-DZ214tR8.js"></script>
+    <link rel="stylesheet" crossorigin href="/m4-w4-note-taking/assets/index-CYvIOR4D.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
