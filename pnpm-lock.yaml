@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@tailwindcss/vite':
-        specifier: ^4.3.5
+        specifier: ^4.3.3
         version: 4.3.5(vite@8.3.6(@types/node@24.19.2)(jiti@2.7.0))
       react:
         specifier: ^19.3.1
@@ -17,11 +17,8 @@ importers:
       react-dom:
         specifier: ^19.3.1
         version: 19.3.1(react@19.3.1)
-      react-icons:
-        specifier: ^5.7.0
-        version: 5.7.0(react@19.3.1)
       tailwindcss:
-        specifier: ^4.3.5
+        specifier: ^4.3.3
         version: 4.3.5
     devDependencies:
       '@eslint/js':
@@ -40,7 +37,7 @@ importers:
         specifier: ^6.1.2
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(jiti@2.7.0))
       eslint:
-        specifier: ^10.14.0
+        specifier: ^10.13.0
         version: 10.14.0(jiti@2.7.0)
       eslint-plugin-react-hooks:
         specifier: ^7.1.1
@@ -55,10 +52,10 @@ importers:
         specifier: ~6.0.3
         version: 6.0.3
       typescript-eslint:
-        specifier: ^8.72.1
+        specifier: ^8.71.2
         version: 8.72.1(eslint@10.14.0(jiti@2.7.0))(typescript@6.0.3)
       vite:
-        specifier: ^8.3.6
+        specifier: ^8.3.4
         version: 8.3.6(@types/node@24.19.2)(jiti@2.7.0)
 
 packages:
@@ -911,11 +908,6 @@ packages:
     resolution: {integrity: sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==}
     peerDependencies:
       react: ^19.3.1
-
-  react-icons@5.7.0:
-    resolution: {integrity: sha512-LBLy340Rzqy6+/yVhZKT3B/QpP1BZaesGqasf09HPOBzRarcDIFH0WwXlXQfE7q7ipxK4MSiC5DIBWURCny6fw==}
-    peerDependencies:
-      react: '*'
 
   react@19.3.1:
     resolution: {integrity: sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==}
@@ -1839,10 +1831,6 @@ snapshots:
     dependencies:
       react: 19.3.1
       scheduler: 0.28.0
-
-  react-icons@5.7.0(react@19.3.1):
-    dependencies:
-      react: 19.3.1
 
   react@19.3.1: {}
 
